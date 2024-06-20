@@ -55,3 +55,19 @@ const posts = [
         "created": "2021-03-05"
     }
 ];
+
+//Creare un post uguale a quello nell'HTML.
+    
+    //creare container con classe POST
+    var containerPost = document.createElement('div');
+    //Associargli una classe 
+    containerPost.className = 'post';
+
+    //innestater al suo interno la struttura del post originale
+    //sostituire gli elementi che distinguono il post
+
+//Stampiamolo in pagina;
+var container = document.getElementById('container');
+
+    //Innestarlo
+    container.appendChild(newDiv);  
