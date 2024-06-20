@@ -111,6 +111,27 @@ var container = document.getElementById('container');
 
     }
 
-   
+
+// Aggiungere evento click per tutti i pulsanti like
+const likeButtons = document.querySelectorAll('.like-button');
+        likeButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                const likeLabel = this.querySelector('.like-button__label');
+                const likeCounter = this.closest('.post__footer').querySelector('.js-likes-counter');
+                
+                // Cambia il colore del like
+                likeLabel.classList.toggle('liked');
+                
+                // Incrementa il numero di like
+                let likes = parseInt(likeCounter.textContent);
+                if (likeLabel.classList.contains('liked')) {
+                    likes++;
+                } else {
+                    likes--;
+                }
+                likeCounter.textContent = likes;
+            });
+        });
 
     

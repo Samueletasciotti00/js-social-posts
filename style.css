@@ -103,6 +103,10 @@ h1 {
     align-items: center;
 }
 
+.liked{
+    color: red;
+}
+
 .like-button {
     display: inline-block;
     padding: 16px;
