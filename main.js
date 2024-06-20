@@ -56,18 +56,49 @@ const posts = [
     }
 ];
 
-//Creare un post uguale a quello nell'HTML.
-    
-    //creare container con classe POST
-    var containerPost = document.createElement('div');
-    //Associargli una classe 
+//Creare una variabile per l'inserimento
+
+//Creare elemento div class post
+var containerPost = document.createElement('div');   
+    //Add Class
     containerPost.className = 'post';
 
-    //innestater al suo interno la struttura del post originale
-    //sostituire gli elementi che distinguono il post
-
-//Stampiamolo in pagina;
+//Creare variabile per il contenitore
 var container = document.getElementById('container');
+    
+    //Inserisco la struttura html nel div
+    containerPost.innerHTML = `
 
-    //Innestarlo
-    container.appendChild(newDiv);  
+    <div class="post__header">
+    <div class="post-meta">                    
+        <div class="post-meta__icon">
+            <img class="profile-pic" src=${posts[1].author.image} alt="${posts[1].author.name}">                    
+        </div>
+        <div class="post-meta__data">
+            <div class="post-meta__author">${posts[1].author.name}</div>
+            <div class="post-meta__time">4 mesi fa</div>
+        </div>                    
+    </div>
+</div>
+<div class="post__text">Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.</div>
+<div class="post__image">
+    <img src="${posts[1].media}" alt="">
+</div>
+<div class="post__footer">
+    <div class="likes js-likes">
+        <div class="likes__cta">
+            <a class="like-button  js-like-button" href="#" data-postid="1">
+                <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                <span class="like-button__label">Mi Piace</span>
+            </a>
+        </div>
+        <div class="likes__counter">
+            Piace a <b id="like-counter-1" class="js-likes-counter">${posts[1].likes}</b> persone
+        </div>
+    </div> 
+</div>            
+
+    `
+
+    //Stampare in pagina
+    container.appendChild(containerPost);  
